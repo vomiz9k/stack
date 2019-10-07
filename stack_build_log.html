@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>stack build log</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<tt>
+Build started on: <u>07-10-2019 at 14:10.02</u><br />
+Build ended on: <u>07-10-2019 at 14:10.03</u><p />
+<b>-------------- Build: Release in stack (compiler: GNU GCC Compiler - Strict + Fast (SINGLE FILES ONLY))---------------</b><br />
+mingw32-g++.exe "C:\Users\kiril\Documents\c\stack\main.cpp" -o bin\Release\stack.exe -mconsole  -Wall  -O2  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC   -s<br />
+In file included from C:\Users\kiril\Documents\c\stack\stack.h:62:0,<br />
+                 from C:\Users\kiril\Documents\c\stack\main.cpp:6:<br />
+C:\Users\kiril\Documents\c\stack\stack.cpp: In function 'bool stack_dump(stack_t*, int)':<br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\stack.cpp:244:88: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'stack_t*' [-Wformat=]</font><br />
+                 printf ("\nSTACK POINTER ERROR!!!\n\n\tStack pointer == [%x]\n", _stack);<br />
+                                                                                        ^<br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\stack.cpp:248:92: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'stack_type* {aka int*}' [-Wformat=]</font><br />
+                 printf ("\nDATA POINTER ERROR!!!\n\n\tData pointer == [%x]\n", _stack-&gt;data);<br />
+                                                                                            ^<br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\stack.cpp:254:165: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]</font><br />
+                 printf ("\tStack canary 1 == %d\tMust be %d\n\tStack canary 2 == %d\tMust be %d\n\n", _stack-&gt;canary_1, CANARYCONST1, _stack-&gt;canary_2, CANARYCONST2);<br />
+                                                                                                                                                                     ^<br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\stack.cpp:254:165: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\stack.cpp:259:215: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]</font><br />
+                     printf ("\tData canary 1 == %d\tMust be %d\n\tData canary 2 == %d\tMust be %d\n", *((long int*)_stack-&gt;data - 1), DATACANARYCONST1, *((long int*)_stack-&gt;data +_stack-&gt;max_size), DATACANARYCONST2);<br />
+                                                                                                                                                                                                                       ^<br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\stack.cpp:259:215: warning: format '%d' expects argument of type 'int', but argument 4 has type 'long int' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\stack.cpp:276:122: warning: unknown conversion type character 'l' in format [-Wformat=]</font><br />
+                 printf ("\nHASH SUM ERROR!!!\n\n\tHash sum == %lld\tMust be %d\n\n", _stack-&gt;hash_sum, get_hash (*_stack));<br />
+                                                                                                                          ^<br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\stack.cpp:276:122: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long long int' [-Wformat=]</font><br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\stack.cpp:276:122: warning: too many arguments for format [-Wformat-extra-args]</font><br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\stack.cpp:286:1: warning: no return statement in function returning non-void [-Wreturn-type]</font><br />
+ }<br />
+ ^<br />
+C:\Users\kiril\Documents\c\stack\main.cpp: In function 'bool test_underflow(stack_t*)':<br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\main.cpp:8:6: warning: no previous declaration for 'bool test_underflow(stack_t*)' [-Wmissing-declarations]</font><br />
+ bool test_underflow(stack_t* this_)<br />
+      ^<br />
+C:\Users\kiril\Documents\c\stack\main.cpp: In function 'bool test_nullptr(stack_t*)':<br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\main.cpp:20:6: warning: no previous declaration for 'bool test_nullptr(stack_t*)' [-Wmissing-declarations]</font><br />
+ bool test_nullptr(stack_t* this_)<br />
+      ^<br />
+In file included from C:\Users\kiril\Documents\c\stack\main.cpp:6:0:<br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\stack.h:2:65: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]</font><br />
+ #define STACKCONSTRUCT( _stack ) stack_construct(_stack, #_stack)<br />
+                                                                 ^<br />
+C:\Users\kiril\Documents\c\stack\main.cpp:25:5: note: in expansion of macro 'STACKCONSTRUCT'<br />
+     STACKCONSTRUCT(nullptr);<br />
+     ^<br />
+C:\Users\kiril\Documents\c\stack\main.cpp: At global scope:<br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\main.cpp:20:6: warning: unused parameter 'this_' [-Wunused-parameter]</font><br />
+ bool test_nullptr(stack_t* this_)<br />
+      ^<br />
+C:\Users\kiril\Documents\c\stack\main.cpp: In function 'bool test_size(stack_t*)':<br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\main.cpp:32:6: warning: no previous declaration for 'bool test_size(stack_t*)' [-Wmissing-declarations]</font><br />
+ bool test_size(stack_t* stack_)<br />
+      ^<br />
+C:\Users\kiril\Documents\c\stack\main.cpp: In function 'int main()':<br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\main.cpp:52:31: warning: missing initializer for member 'stack_t::canary_1' [-Wmissing-field-initializers]</font><br />
+     struct stack_t a_stack = {};<br />
+                               ^<br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\main.cpp:52:31: warning: missing initializer for member 'stack_t::name' [-Wmissing-field-initializers]</font><br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\main.cpp:52:31: warning: missing initializer for member 'stack_t::data' [-Wmissing-field-initializers]</font><br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\main.cpp:52:31: warning: missing initializer for member 'stack_t::size' [-Wmissing-field-initializers]</font><br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\main.cpp:52:31: warning: missing initializer for member 'stack_t::max_size' [-Wmissing-field-initializers]</font><br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\main.cpp:52:31: warning: missing initializer for member 'stack_t::hash_sum' [-Wmissing-field-initializers]</font><br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\main.cpp:52:31: warning: missing initializer for member 'stack_t::canary_2' [-Wmissing-field-initializers]</font><br />
+In file included from C:\Users\kiril\Documents\c\stack\main.cpp:6:0:<br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\stack.h:2:65: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]</font><br />
+ #define STACKCONSTRUCT( _stack ) stack_construct(_stack, #_stack)<br />
+                                                                 ^<br />
+C:\Users\kiril\Documents\c\stack\main.cpp:54:5: note: in expansion of macro 'STACKCONSTRUCT'<br />
+     STACKCONSTRUCT(&amp;a_stack);<br />
+     ^<br />
+In file included from C:\Users\kiril\Documents\c\stack\stack.h:62:0,<br />
+                 from C:\Users\kiril\Documents\c\stack\main.cpp:6:<br />
+C:\Users\kiril\Documents\c\stack\stack.cpp: In function 'bool stack_construct(stack_t*, char*)':<br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\stack.cpp:33:1: warning: control reaches end of non-void function [-Wreturn-type]</font><br />
+ }<br />
+ ^<br />
+In file included from C:\Users\kiril\Documents\c\stack\stack.h:62:0,<br />
+                 from C:\Users\kiril\Documents\c\stack\main.cpp:6:<br />
+C:\Users\kiril\Documents\c\stack\stack.cpp: In function 'bool stack_push(stack_t*, stack_type)':<br />
+<font color="#0000ff">C:\Users\kiril\Documents\c\stack\stack.cpp:98:1: warning: control reaches end of non-void function [-Wreturn-type]</font><br />
+ }<br />
+ ^<br />
+Output size is 743,00 KB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minutes, 1 seconds)</font><br />
+<font color="#0000ff">0 errors, 25 warnings (0 minutes, 1 seconds)</font><br />
+</tt>
+</body>
+</html>
